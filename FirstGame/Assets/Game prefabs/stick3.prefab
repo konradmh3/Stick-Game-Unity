@@ -1948,7 +1948,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 2
   m_Material: {fileID: 6200000, guid: 0278bc73b6bea9941b96f203606a35f1, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -2015,11 +2015,17 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 8
   jumpableSurface: {fileID: 0}
+  myColider: {fileID: 0}
   alive: 0
   m_facingLeft: 0
   velocity: 0
   Health: 5
   deathlocation: {fileID: 8202796598160526343, guid: 03ac7e3cf4da71d41865a05f5e170398, type: 3}
+  FinishLevel: 0
+  delay: 4
+  maxHealth: 100
+  healthBar: {fileID: 0}
+  doorUnlocked: 0
 --- !u!114 &688081870322138903
 MonoBehaviour:
   m_ObjectHideFlags: 0

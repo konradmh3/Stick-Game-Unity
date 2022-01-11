@@ -53,22 +53,23 @@ public class Player : MonoBehaviour
         if(alive){
         if (Input.GetKeyDown(KeyCode.Space) && groundCheck())
         {
-            float jumpVelocity = 10f;
+            float jumpVelocity = 20f;
             rigidbody2d.velocity = new Vector2(rigidbody2d.velocity.x, jumpVelocity);
             
         }
         if (Input.GetKeyDown(KeyCode.Space) && !groundCheck() && wallCheckR())
         {
-            float jumpVelocity = 10f;
-            rigidbody2d.velocity = new Vector2(rigidbody2d.velocity.x - 8f, jumpVelocity);
+            float jumpVelocity = 16f;
+            rigidbody2d.velocity = new Vector2(rigidbody2d.velocity.x - 12f, jumpVelocity);
             
         }
         if (Input.GetKeyDown(KeyCode.Space) && !groundCheck() && wallCheck())
         {
-            float jumpVelocity = 10f;
-            rigidbody2d.velocity = new Vector2(rigidbody2d.velocity.x + 8f, jumpVelocity);
+            float jumpVelocity = 16f;
+            rigidbody2d.velocity = new Vector2(rigidbody2d.velocity.x + 12f, jumpVelocity);
             
         }
+         groundCheck();
          Movement();
          handleAnimations();
          flip();
@@ -84,10 +85,14 @@ public class Player : MonoBehaviour
     }
     void Movement()
     {
-        float airAcceleration = 15f;
+        float airAcceleration = 25f;
         float groundAcceleration = 30f;
         float maxSpeed = 20f;
         float currentSpeed = rigidbody2d.velocity.x;
+
+        if(!Input.GetKey(KeyCode.A) && !Input.GetKey(KeyCode.D) && groundCheck()){
+            rigidbody2d.velocity = new Vector2(0, 0);
+        }
  
         if (Input.GetKey(KeyCode.A) && !wallCheck())
         {
@@ -137,7 +142,7 @@ public class Player : MonoBehaviour
     
     private bool groundCheck()
     {
-        float extraheighttext =.1f;
+        float extraheighttext =.2f;
         RaycastHit2D raycastHit = Physics2D.Raycast(myColider.bounds.center, Vector2.down, myColider.bounds.extents.y + extraheighttext, platformLayerMask);
         Color rayColor;
         if(raycastHit.collider!=null){
