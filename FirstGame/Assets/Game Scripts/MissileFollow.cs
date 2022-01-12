@@ -5,6 +5,7 @@ using UnityEngine;
 public class MissileFollow : MonoBehaviour
 {
     // Start is called before the first frame update
+    private fireMissiles missileLauncherScriptRef;
     private Vector2 pointerTowardsStick;
     public GameObject playerObject;
     public Rigidbody2D rb;
@@ -28,6 +29,7 @@ public class MissileFollow : MonoBehaviour
 
     // }
     void Start(){
+        missileLauncherScriptRef = GameObject.Find("MissileLauncher").GetComponent<fireMissiles>();
         playerScriptReference = GameObject.Find("stick3").GetComponent<Player>();
         pointerTowardsStick = new Vector2(playerObject.transform.position.x - transform.position.x, playerObject.transform.position.y - transform.position.y);
         pointerTowardsStick.Normalize();
@@ -60,6 +62,12 @@ public class MissileFollow : MonoBehaviour
 
         }
         
+    }
+    void OnTriggerEnter2D(Collider2D other){
+        if(other.gameObject.CompareTag("bullet")){
+            Destroy(gameObject);
+            missileLauncherScriptRef.missileLive = false;
+        }
     }
     //     inverseTAN(y/x) gives angle needed to point towards player
     //     bulletParticals.transform.position = transform.position;

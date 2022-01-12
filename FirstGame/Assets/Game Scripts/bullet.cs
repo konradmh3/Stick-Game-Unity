@@ -8,6 +8,7 @@ public class bullet : MonoBehaviour
     public float speed = 20f;
     public Rigidbody2D rb;
     private float timer;
+
     
     // public ParticleSystem bulletParticals;
     // Update is called once per frame
@@ -30,6 +31,7 @@ public class bullet : MonoBehaviour
         if(!collider.gameObject.CompareTag("Player")){
             Destroy(gameObject);
         }
+       
         
     }
 }

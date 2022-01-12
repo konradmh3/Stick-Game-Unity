@@ -87,11 +87,11 @@ public class Player : MonoBehaviour
     {
         float airAcceleration = 25f;
         float groundAcceleration = 30f;
-        float maxSpeed = 20f;
+        float maxSpeed = 30f;
         float currentSpeed = rigidbody2d.velocity.x;
 
         if(!Input.GetKey(KeyCode.A) && !Input.GetKey(KeyCode.D) && groundCheck()){
-            rigidbody2d.velocity = new Vector2(0, 0);
+            rigidbody2d.velocity = new Vector2(0, rigidbody2d.velocity.y);
         }
  
         if (Input.GetKey(KeyCode.A) && !wallCheck())
