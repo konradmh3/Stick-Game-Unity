@@ -24,7 +24,7 @@ public class Player : MonoBehaviour
     public int maxHealth = 100;
     public HealthBarScript healthBar;
     public bool doorUnlocked = false;
-    private fireMissiles missileLauncherScriptRef;
+    // public MissileFollow missileScriptRef;
 
     
     
@@ -43,7 +43,6 @@ public class Player : MonoBehaviour
         m_facingLeft = true;
         velocity = rigidbody2d.velocity.x;
         healthBar.SetMaxHealth(maxHealth);
-        missileLauncherScriptRef = GameObject.Find("MissileLauncher").GetComponent<fireMissiles>();
 
     }
 
@@ -263,10 +262,13 @@ public class Player : MonoBehaviour
             doorUnlocked = true;
             Destroy(other.gameObject);
         }
-        if(other.gameObject.CompareTag("Missile")){
-            Destroy(other.gameObject);
-            missileLauncherScriptRef.missileLive = false;
-            Health -= 15;
+        // if(other.gameObject.CompareTag("Missile")){
+        //     Destroy(other.gameObject);
+        //     missileScriptRef.missileLauncherScriptRef.missileLive = false;
+        //     Health -= 15;
+        // }
+        if(other.gameObject.CompareTag("Lava")){
+            Health -= 100;
         }
         
             

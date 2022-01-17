@@ -8,6 +8,8 @@ TagManager:
   - DoorKey
   - Missile
   - bullet
+  - Lava
+  - platfroms
   layers:
   - Default
   - TransparentFX
@@ -48,11 +50,14 @@ TagManager:
   - name: Background
     uniqueID: 2520253737
     locked: 0
-  - name: Platforms
-    uniqueID: 1988210093
-    locked: 0
   - name: Character
     uniqueID: 1711202269
+    locked: 0
+  - name: Lava
+    uniqueID: 472682129
+    locked: 0
+  - name: Platforms
+    uniqueID: 1988210093
     locked: 0
   - name: Lamp
     uniqueID: 2218642013
