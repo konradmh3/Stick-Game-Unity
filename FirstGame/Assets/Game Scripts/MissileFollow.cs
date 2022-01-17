@@ -67,7 +67,7 @@ public class MissileFollow : MonoBehaviour
             
         }
         if(other.gameObject.CompareTag("Player")){
-            playerScriptReference.Health-=20;
+            playerScriptReference.Health-=30;
             Destroy(gameObject);
 
         }

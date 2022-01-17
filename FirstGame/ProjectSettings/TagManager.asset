@@ -50,6 +50,9 @@ TagManager:
   - name: Background
     uniqueID: 2520253737
     locked: 0
+  - name: Lamp
+    uniqueID: 2218642013
+    locked: 0
   - name: Character
     uniqueID: 1711202269
     locked: 0
@@ -58,7 +61,4 @@ TagManager:
     locked: 0
   - name: Platforms
     uniqueID: 1988210093
-    locked: 0
-  - name: Lamp
-    uniqueID: 2218642013
     locked: 0
