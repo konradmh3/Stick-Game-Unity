@@ -3,4 +3,4 @@
 
 Inspisations from Flash Game N...First unity application
 
-View gameplay here : https://konradmh3.github.io
+View gameplay here : [My Portfolio](https://konradhernan.dev/stick)
